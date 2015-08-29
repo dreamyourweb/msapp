@@ -17,18 +17,23 @@
 <template name="stats">
     <div id="stats" class="padding">
         <div class="row">
-            <div class=" col-10"><i class="icon ion-heart"></i></div>
-            <div class="col col-70"><div class="chart heartChart"></div></div>
-            <div class="col col-20">
-                <span class="value">{{heart}}</span>
-                <span class="unit">bpm</span>
+            <div class="col-10"><i class="icon ion-heart"></i></div>
+            <div class="col col-65"><div class="chart heartChart"></div></div>
+            <div class="col col-25">
+                <div class="valueUnitContainer">
+                    <div class="value">{{heart}}</div>
+                    <div class="unit">BPM</div>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class=" col-10"><i class="icon ion-fireball"></i></div>
-            <div class="col col-70"><div class="chart stressChart"></div></div>
-            <div class="col col-20">
-                <span class="value">{{stress}}%</span>
+            <div class="col col-65"><div class="chart stressChart"></div></div>
+            <div class="col col-25">
+                <div class="valueUnitContainer">
+                    <div class="value">{{stress}}%</div>
+                    <div class="unit">STRESS</div>
+                </div>
             </div>
         </div>
     </div>

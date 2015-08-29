@@ -18,14 +18,24 @@ body{
     }
     .icon {
         vertical-align: middle;
-        font-size: 300%;
-        height: 65px;
+        font-size: 3rem;
+        line-height: 65px;
     }
-    .value, .unit {
-        font-weight: bold;
+
+    .valueUnitContainer, .valueContainer {
+        margin-top: (65px - 40px) / 2;
+        height: 100%;
+        .value, .unit {
+            font-weight: bold;
+            text-align: center;
+        }
+        .value {
+            font-size: 2rem;
+        }
     }
-    .value {
-        font-size: 180%;
+
+    .valueContainer {
+        margin-top: (65px - 20px) / 2;
     }
 }
 
