@@ -63,6 +63,14 @@ Template.stats.rendered = () => {
     new Chartist.Line('.heartChart', stats.heart.get(), chartOptions);
 
 };
+Template.registerHelper("color", function() {
+    let colors = {
+      "warning": "energized",
+      "question": "calm",
+      "info": "positive"
+    };
+    return colors[this.type];
+})
 
 Template.card.helpers({
     icon() {
@@ -72,5 +80,13 @@ Template.card.helpers({
             "info": "ion-information-circled"
         };
         return icons[this.type];
+    },
+    action() {
+      let actions = {
+        "warning": "no-action",
+        "question": "slider-action",
+        "info": "no-action"
+      };
+      return actions[this.type];
     }
 });
