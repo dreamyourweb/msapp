@@ -7,10 +7,13 @@ $loading-font-size: 22px;
   background: $stable;
 }
 
-#stats {
-    // background: $calm;
+#statsContainer{
     background: url(http://lorempixel.com/1080/720/nature/);
     background-size: 100% auto;
+}
+#stats {
+    // background: $calm;
+    background: rgba($calm, 0.5);
     .icon {
         // font-size: 400%;
         &.ion-heart{ color: $assertive; }
