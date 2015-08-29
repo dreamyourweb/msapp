@@ -1,0 +1,41 @@
+<template name="layout">
+    {{#ionBody}}
+        {{>yield}}
+    {{/ionBody}}
+</template>
+
+<template name="home">
+    {{#ionContent}}
+        {{> stats}}
+        {{> cards}}
+    {{/ionContent}}
+</template>
+
+<template name="stats">
+    <div id="stats">
+        <div class="row">
+            <div class="col"><i class="icon ion-star"></i></div>
+            <div class="col"><i class="icon ion-star"></i></div>
+        </div>
+        <div class="row">
+            <div class="col"><i class="icon ion-star"></i></div>
+            <div class="col"><i class="icon ion-star"></i></div>
+        </div>
+    </div>
+</template>
+
+<template name="cards">
+    {{#ionList class="my-class"}}
+        {{#each cards}}
+            {{>card}}
+        {{/each}}
+    {{/ionList}}
+</template>
+
+<template name="card">
+    <div class="card">
+        <div class="item item-text-wrap">
+            {{message}}
+        </div>
+    </div>
+</template>
