@@ -3,7 +3,7 @@ $loading-font-size: 22px;
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/_ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/_ionicons';
 
-body{
+.content {
   background: $stable;
 }
 
