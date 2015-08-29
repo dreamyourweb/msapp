@@ -4,6 +4,7 @@ let types = ["warning", "question", "info"];
 
 
 Meteor.startup(() => {
+    console.log(Cards.find().count());
     if (Cards.find().count() === 0) {
 
         for(let i = 0; i < 10; i++){
