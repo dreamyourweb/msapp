@@ -115,19 +115,18 @@ Template.card.rendered = () => {
     let hammertime = new Hammer(card);
     hammertime.on("panmove", (ev) => {
         if (ev.target.className !== 'noswipe')
-            instance.panx.set(ev.deltaX);
+            $(card).css({left: ev.deltaX + 'px'});
     });
     hammertime.on("panend", (ev) => {
         if (ev.target.className !== 'noswipe')
-            if (ev.deltaX > $('body').width() * 0.4) {
-                instance.panx.set($('body').width());
-                Meteor.setTimeout(() => {
+            if (ev.deltaX > $('body').width() * 0.5) {
+                $(card).stop().animate({left: $('body').width() + 'px'}, {duration: 150, complete: () => {
                     $(card).animate({height: "0px", padding: "0px", margin: "0px"}, {duration: 300, complete: () => {
                         Cards.remove(instance.data._id);
                     }});
-                }, 150);
+                }});
             } else
-                instance.panx.set(0);
+                $(card).stop().animate({left: '0px'}, 200);
     });
 };
 
