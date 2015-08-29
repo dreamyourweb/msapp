@@ -15,17 +15,31 @@
     <div id="stats">
         <div class="row">
             <div class="col">
-                <a class="item item-icon-left">
+                <div class="item item-icon-left">
                     <i class="icon ion-cloud"></i>
                     {{temperature}}
-                </a>
-
+                </div>
             </div>
-            <div class="col"><i class="icon ion-heart"></i>{{heart}}</div>
+            <div class="col">
+                <div class="item item-icon-left">
+                    <i class="icon ion-heart"></i>
+                    {{heart}}
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col"><i class="icon ion-fireball"></i>{{stress}}</div>
-            <div class="col"><i class="icon ion-star"></i>{{respiration}}</div>
+            <div class="col">
+                <div class="item item-icon-left">
+                    <i class="icon ion-fireball"></i>
+                    {{stress}}
+                </div>
+            </div>
+            <div class="col">
+                <div class="item item-icon-left">
+                    <i class="icon ion-star"></i>
+                    {{respiration}}
+                </div>
+            </div>
         </div>
     </div>
 </template>
