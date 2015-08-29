@@ -53,6 +53,9 @@ Template['slider-action'].created = () => {
 Template['slider-action'].events({
     "mouseup": (ev) => {
         Template.instance().show.set(true);
+    },
+    "touchend": (ev) => {
+        Template.instance().show.set(true);
     }
 });
 
