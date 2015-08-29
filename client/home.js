@@ -20,13 +20,6 @@ Template['slider-action'].created = () => {
     Template.instance().show = new ReactiveVar(false);
 }
 
-Template['slider-action'].rendered = () => {
-    let hammertime = new Hammer(this, {});
-    hammertime.on('swiperight', function(ev) {
-        console.log(ev);
-    });
-}
-
 Template['slider-action'].events({
     "mouseup": (ev) => {
         Template.instance().show.set(true);
@@ -38,6 +31,13 @@ Template['slider-action'].helpers({
         return Template.instance().show.get();
     }
 })
+
+Template.card.rendered = () => {
+    let hammertime = new Hammer(this.find('.card'), {});
+    hammertime.on('swiperight', function(ev) {
+        console.log(ev);
+    });
+}
 
 Template.card.helpers({
     icon() {
