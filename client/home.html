@@ -39,13 +39,27 @@
 </template>
 
 <template name="card">
-    <div class="card">
-        <div class="item item-text-wrap">
-           <div class="item item-icon-left">
-             <i class="icon {{icon}}"></i>
-             <h2>{{title}}</h2>
-             <p>{{message}}</p>
-           </div>
+    <div class="list card">
+        <div class="item item-icon-left">
+            <i class="icon {{icon}} {{color}}"></i>
+            <h2>{{title}}</h2>
+            <p>{{message}}</p>
         </div>
+        {{> Template.dynamic template=action}}
     </div>
+</template>
+
+<template name="no-action">
+</template>
+
+<template name="slider-action">
+    <div class="item range range-{{color}}">
+        <i class="icon ion-ios-sunny-outline"></i>
+        <input type="range" name="tiredness" min="0" max="100" value="50">
+        <i class="icon ion-ios-sunny"></i>
+    </div>
+    <a class="item item-icon-left {{color}}" href="#">
+        <i class="icon ion-ios-checkmark-outline"></i>
+        Geef advies
+    </a>
 </template>

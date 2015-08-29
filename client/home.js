@@ -16,6 +16,15 @@ Template.stats.helpers({
     respiration() { return stats.respiration.get() }
 });
 
+Template.registerHelper("color", function() {
+    let colors = {
+      "warning": "energized",
+      "question": "calm",
+      "info": "positive"
+    };
+    return colors[this.type];
+})
+
 Template.card.helpers({
     icon() {
         let icons = {
@@ -24,5 +33,13 @@ Template.card.helpers({
           "info": "ion-information-circled"
         };
         return icons[this.type];
+    },
+    action() {
+      let actions = {
+        "warning": "no-action",
+        "question": "slider-action",
+        "info": "no-action"
+      };
+      return actions[this.type];
     }
 });
