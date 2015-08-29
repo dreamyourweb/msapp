@@ -16,16 +16,16 @@ body{
         &.ion-fireball{ color: $energized; }
         &.ion-fireball{ color: $energized; }
     }
-    .item {
-        background: none;
-        border: none;
-        .value {
-            float: right;
-        }
-        .icon {
-            vertical-align: middle;
-            font-size: 300%;
-        }
+    .icon {
+        vertical-align: middle;
+        font-size: 300%;
+        height: 65px;
+    }
+    .value, .unit {
+        font-weight: bold;
+    }
+    .value {
+        font-size: 180%;
     }
 }
 
