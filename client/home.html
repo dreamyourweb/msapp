@@ -35,7 +35,11 @@
 <template name="card">
     <div class="card">
         <div class="item item-text-wrap">
-            {{message}}
+           <div class="item item-avatar">
+             <i class="icon {{icon}}"></i>
+             <h2>{{title}}</h2>
+             <p>{{message}}</p>
+           </div>
         </div>
     </div>
 </template>
