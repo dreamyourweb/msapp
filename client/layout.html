@@ -12,13 +12,34 @@
             {{#ionSideMenus}}
                 {{#ionSideMenu side="left"}}
                     <div class="bar bar-header bar-dark">
-                        <h1 class="title">Left Menu</h1>
+                        <h1 class="title">Menu</h1>
                     </div>
                     <div class="content has-header">
                         <div class="list">
-                            <div class="item item-icon-right" data-ion-menu-close>
-                                Close Me {{> ionIcon icon="ios-arrow-right"}}
+                            <div class="item item-avatar">
+                                <img src="http://lorempixel.com/200/200/people/">
+                                <h2>Marty McFly</h2>
+                                <p>November 05, 1955</p>
                             </div>
+
+                            <div class="item item-icon-left item-icon-right">
+                                <i class="icon ion-email"></i>
+                                Menu Item 1
+                                {{> ionIcon icon="ios-arrow-right"}}
+                            </div>
+
+                            <div class="item item-icon-left item-icon-right">
+                                <i class="icon ion-email"></i>
+                                Menu Item 2
+                                {{> ionIcon icon="ios-arrow-right"}}
+                            </div>
+
+                            <div class="item item-icon-left item-icon-right">
+                                <i class="icon ion-email"></i>
+                                Menu Item 3
+                                {{> ionIcon icon="ios-arrow-right"}}
+                            </div>
+
                         </div>
                     </div>
                 {{/ionSideMenu}}
