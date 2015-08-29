@@ -1,14 +1,17 @@
-<template name="layout">
-    {{#ionBody}}
-        {{>yield}}
-    {{/ionBody}}
-</template>
 
 <template name="home">
     {{#ionContent}}
         {{> stats}}
         {{> cards}}
     {{/ionContent}}
+
+    {{#contentFor "headerButtonLeft"}}
+        <button class="button button-icon icon ion-navicon" data-ion-menu-toggle="left"></button>
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">MS Health</h1>
+    {{/contentFor}}
 </template>
 
 <template name="stats">
