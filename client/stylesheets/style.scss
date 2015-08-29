@@ -19,6 +19,13 @@ body{
     .item {
         background: none;
         border: none;
+        .value {
+            float: right;
+        }
+        .icon {
+            vertical-align: middle;
+            font-size: 300%;
+        }
     }
 }
 
