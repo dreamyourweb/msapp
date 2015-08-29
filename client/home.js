@@ -91,9 +91,11 @@ Template.registerHelper("color", function() {
 });
 
 Template.card.rendered = () => {
-    let hammertime = new Hammer(this.find('.card'), {});
-    hammertime.on('swiperight', function(ev) {
-        console.log(ev);
+    let hammertime = new Hammer(Template.instance().find('.card'));
+    let data = Template.instance().data;
+    hammertime.on("swiperight", (ev) => {
+        if (ev.target.className !== 'noswipe')
+            Cards.remove(data._id);
     });
 };
 

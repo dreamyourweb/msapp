@@ -12,6 +12,7 @@ caching-compiler@1.0.0-rc.0
 caching-html-compiler@1.0.1-rc.0
 callback-hook@1.0.4-rc.0
 check@1.0.6-rc.0
+chriswessels:hammer@4.0.2
 ddp@1.2.1-rc.0
 ddp-client@1.2.1-rc.1
 ddp-common@1.2.1-rc.0
@@ -24,7 +25,6 @@ ejson@1.0.7-rc.0
 fastclick@1.0.7-rc.0
 fourseven:scss@2.1.1
 geojson-utils@1.0.4-rc.0
-hammer:hammer@2.0.4_2
 hot-code-push@1.0.0-rc.0
 html-tools@1.0.5-rc.0
 htmljs@1.0.5-rc.1
