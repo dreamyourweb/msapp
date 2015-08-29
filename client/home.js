@@ -113,7 +113,7 @@ Template.card.rendered = () => {
     let instance = Template.instance();
     let card = instance.find('.card');
     let hammertime = new Hammer(card);
-    hammertime.on("panmove", (ev) => {
+    hammertime.on("panleft panright", (ev) => {
         if (ev.target.className !== 'noswipe')
             $(card).css({left: ev.deltaX + 'px'});
     });
