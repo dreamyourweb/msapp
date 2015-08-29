@@ -8,7 +8,9 @@ $loading-font-size: 22px;
 }
 
 #stats {
-    background: $calm;
+    // background: $calm;
+    background: url(http://lorempixel.com/1080/720/nature/);
+    background-size: 100% auto;
     .icon {
         // font-size: 400%;
         &.ion-heart{ color: $assertive; }
