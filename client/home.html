@@ -14,12 +14,18 @@
 <template name="stats">
     <div id="stats">
         <div class="row">
-            <div class="col"><i class="icon ion-cloud"></i></div>
-            <div class="col"><i class="icon ion-heart"></i></div>
+            <div class="col">
+                <a class="item item-icon-left">
+                    <i class="icon ion-cloud"></i>
+                    {{temperature}}
+                </a>
+
+            </div>
+            <div class="col"><i class="icon ion-heart"></i>{{heart}}</div>
         </div>
         <div class="row">
-            <div class="col"><i class="icon ion-fireball"></i></div>
-            <div class="col"><i class="icon ion-star"></i></div>
+            <div class="col"><i class="icon ion-fireball"></i>{{stress}}</div>
+            <div class="col"><i class="icon ion-star"></i>{{respiration}}</div>
         </div>
     </div>
 </template>
