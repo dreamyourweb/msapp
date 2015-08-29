@@ -16,13 +16,27 @@ Template.stats.helpers({
     respiration() { return stats.respiration.get() }
 });
 
-Template.registerHelper("color", function() {
-    let colors = {
-      "warning": "energized",
-      "question": "calm",
-      "info": "positive"
-    };
-    return colors[this.type];
+Template['slider-action'].created = () => {
+    Template.instance().show = new ReactiveVar(false);
+}
+
+Template['slider-action'].rendered = () => {
+    let hammertime = new Hammer(this, {});
+    hammertime.on('swiperight', function(ev) {
+        console.log(ev);
+    });
+}
+
+Template['slider-action'].events({
+    "mouseup": (ev) => {
+        Template.instance().show.set(true);
+    }
+});
+
+Template['slider-action'].helpers({
+    show() {
+        return Template.instance().show.get();
+    }
 })
 
 Template.card.helpers({
@@ -42,4 +56,13 @@ Template.card.helpers({
       };
       return actions[this.type];
     }
-});
+})
+
+Template.registerHelper("color", function() {
+    let colors = {
+      "warning": "energized",
+      "question": "calm",
+      "info": "positive"
+    };
+    return colors[this.type];
+})
