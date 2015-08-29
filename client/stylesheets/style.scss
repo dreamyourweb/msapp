@@ -9,4 +9,11 @@ body{
 
 #stats {
     background: $calm;
+    .icon {
+        font-size: 400%;
+        &.ion-heart{ color: $assertive; }
+        &.ion-cloud{ color: $light; }
+        &.ion-fireball{ color: $energized; }
+    }
+
 }
