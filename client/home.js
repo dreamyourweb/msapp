@@ -45,6 +45,23 @@ Template.stats.helpers({
     }
 });
 
+
+Template['slider-action'].created = () => {
+    Template.instance().show = new ReactiveVar(false);
+};
+
+Template['slider-action'].events({
+    "mouseup": (ev) => {
+        Template.instance().show.set(true);
+    }
+});
+
+Template['slider-action'].helpers({
+    show() {
+        return Template.instance().show.get();
+    }
+});
+
 Template.stats.rendered = () => {
     let chartOptions = {
         fullWidth: true,
@@ -75,6 +92,7 @@ Template.stats.rendered = () => {
     });
 
 };
+
 Template.registerHelper("color", function() {
     let colors = {
         "warning": "energized",
@@ -82,7 +100,14 @@ Template.registerHelper("color", function() {
         "info": "positive"
     };
     return colors[this.type];
-})
+});
+
+Template.card.rendered = () => {
+    let hammertime = new Hammer(this.find('.card'), {});
+    hammertime.on('swiperight', function(ev) {
+        console.log(ev);
+    });
+};
 
 Template.card.helpers({
     icon() {
@@ -101,4 +126,13 @@ Template.card.helpers({
         };
         return actions[this.type];
     }
+});
+
+Template.registerHelper("color", function() {
+    let colors = {
+      "warning": "energized",
+      "question": "calm",
+      "info": "positive"
+    };
+    return colors[this.type];
 });

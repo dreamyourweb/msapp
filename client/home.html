@@ -66,12 +66,18 @@
 
 <template name="slider-action">
     <div class="item range range-{{color}}">
-        <i class="icon ion-ios-sunny-outline"></i>
+        <i class="icon ion-ios-bolt-outline"></i>
         <input type="range" name="tiredness" min="0" max="100" value="50">
-        <i class="icon ion-ios-sunny"></i>
+        <i class="icon ion-ios-bolt"></i>
     </div>
-    <a class="item item-icon-left {{color}}" href="#">
-        <i class="icon ion-ios-checkmark-outline"></i>
-        Geef advies
-    </a>
+    <div class="chromelinefix">
+        {{#momentum plugin='slide-height'}}
+            {{#if show}}
+                <a class="item item-icon-left {{color}}" href="#">
+                    <i class="icon ion-ios-checkmark-outline"></i>
+                    Geef advies
+                </a>
+            {{/if}}
+        {{/momentum}}
+    </div>
 </template>
