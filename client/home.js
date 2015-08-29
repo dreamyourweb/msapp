@@ -105,12 +105,29 @@ Template.registerHelper("color", function() {
     return colors[this.type];
 });
 
+Template.card.created = () => {
+    Template.instance().panx = new ReactiveVar(0);
+}
+
 Template.card.rendered = () => {
-    let hammertime = new Hammer(Template.instance().find('.card'));
-    let data = Template.instance().data;
-    hammertime.on("swiperight", (ev) => {
+    let instance = Template.instance();
+    let card = instance.find('.card');
+    let hammertime = new Hammer(card);
+    hammertime.on("panmove", (ev) => {
         if (ev.target.className !== 'noswipe')
-            Cards.remove(data._id);
+            instance.panx.set(ev.deltaX);
+    });
+    hammertime.on("panend", (ev) => {
+        if (ev.target.className !== 'noswipe')
+            if (ev.deltaX > $('body').width() * 0.4) {
+                instance.panx.set($('body').width());
+                Meteor.setTimeout(() => {
+                    $(card).animate({height: "0px", padding: "0px", margin: "0px"}, {duration: 300, complete: () => {
+                        Cards.remove(instance.data._id);
+                    }});
+                }, 150);
+            } else
+                instance.panx.set(0);
     });
 };
 
@@ -130,6 +147,9 @@ Template.card.helpers({
             "info": "no-action"
         };
         return actions[this.type];
+    },
+    style() {
+        return 'transform: translate(' + Template.instance().panx.get() + 'px);';
     }
 });
 

@@ -39,6 +39,10 @@ body{
     }
 }
 
+.card {
+    transition: transform 0.15s;
+}
+
 .chromelinefix {
     padding-top: 4px;
 }
