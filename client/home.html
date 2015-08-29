@@ -15,17 +15,27 @@
     <div id="stats">
         <div class="row">
             <div class="col">
-                <div class="item item-icon-left">
-                    <i class="icon ion-heart"></i>
-                    <div class="heartChart"></div>
+                <div class="item">
+                    <div class="row">
+                        <div class=" col-10"><i class="icon ion-heart"></i></div>
+                        <div class="col col-70"><div class="chart heartChart"></div></div>
+                        <div class="col col-20">
+                            <span class="value">{{heart}} bpm</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <div class="item item-icon-left">
-                    <i class="icon ion-fireball"></i>
-                    <div class="stressChart"></div>
+                <div class="item">
+                    <div class="row">
+                        <div class=" col-10"><i class="icon ion-fireball"></i></div>
+                        <div class="col col-70"><div class="chart stressChart"></div></div>
+                        <div class="col col-20">
+                            <span class="value">{{stress}}%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
