@@ -1,5 +1,15 @@
 $loading-font-size: 22px;
 
+// $calm: #99d49f;
+$balanced: #64bd6d;
+$font-family-base: "Proxima Nova", "Helvetica Neue", "Roboto", sans-serif;
+$font-size-base: 16px;
+$font-size-large: 20px;
+$font-size-small: 14px;
+$item-font-size:  18px;
+$item-icon-accessory-font-size: 18px;
+$button-font-size: 18px;
+
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/_ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/_ionicons';
 
@@ -63,4 +73,21 @@ $loading-font-size: 22px;
 
 .bar .title {
     text-align: center !important;
+}
+
+.bar.bar-balanced {
+    .title, .button  {
+        color: #3c7141;
+        // color: black;
+        // opacity: 0.3;
+    }
+}
+.item-avatar.item-balanced {
+    p, h2 {
+        color: #3c7141;
+    }
+}
+
+.item h2 {
+    font-size: 18px;
 }
