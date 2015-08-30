@@ -152,6 +152,13 @@ Template.card.rendered = () => {
             } else
                 $(card).stop().animate({left: '0px'}, 200);
     });
+    hammertime.on(".link tap", (ev) => {
+        $(card).stop().animate({left: $('body').width() + 'px'}, {duration: 150, complete: () => {
+            $(card).animate({height: "0px", padding: "0px", margin: "0px"}, {duration: 300, complete: () => {
+                Cards.remove(instance.data._id);
+            }});
+        }});
+    });
 };
 
 Template.card.helpers({

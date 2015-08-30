@@ -47,9 +47,11 @@
 
 <template name="cards">
     {{#ionList class="my-class"}}
-        {{#each cards}}
-            {{>card}}
-        {{/each}}
+        {{#momentum plugin='slide-height'}}
+            {{#each cards}}
+                {{>card}}
+            {{/each}}
+        {{/momentum}}
     {{/ionList}}
 </template>
 
@@ -69,14 +71,14 @@
 
 <template name="slider-action">
     <div class="item range range-{{color}}">
-        <i class="icon ion-ios-bolt-outline"></i>
+        <i class="icon ion-android-remove"></i>
         <input class="noswipe" type="range" name="tiredness" min="0" max="100" value="50">
-        <i class="icon ion-ios-bolt"></i>
+        <i class="icon ion-android-add"></i>
     </div>
     <div class="chromelinefix">
         {{#momentum plugin='slide-height'}}
             {{#if show}}
-                <a class="item item-icon-left {{color}}" href="#">
+                <a class="link item item-icon-left {{color}}" href="#">
                     <i class="icon ion-ios-checkmark-outline"></i>
                     Geef advies
                 </a>
