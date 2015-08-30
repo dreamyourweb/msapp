@@ -1,14 +1,19 @@
 <template name="control">
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Control</h1>
+    {{/contentFor}}
+
     {{#ionContent}}
-        <button class="button control-reset">Reset Stress</button>
-        <button class="button control-more-stress">Stress +</button>
-        <button class="button control-less-stress">Stress -</button>
-        <button class="button control-stress-card">Add Stress Card</button>
-        <button class="button control-reset-cards">Reset Cards</button>
-        <button class="button control-clear-cards">Clear Cards</button>
-        <button class="button control-1">Add stuff 6</button>
-        <button class="button control-1">Add stuff 7</button>
-        <button class="button control-1">Add stuff 8</button>
-        <button class="button control-1">Add stuff 9</button>
+        <button class="button button-block control-reset">Reset Stress</button>
+        <button class="button button-block control-more-stress">Stress +</button>
+        <button class="button button-block control-less-stress">Stress -</button>
+        <button class="button button-block control-stress-card">Add Stress Card</button>
+        <button class="button button-block control-reset-cards">Reset Cards</button>
+        <button class="button button-block control-clear-cards">Clear Cards</button>
+        <button class="button button-block control-1">Add stuff 6</button>
+        <button class="button button-block control-1">Add stuff 7</button>
+        <button class="button button-block control-1">Add stuff 8</button>
+        <button class="button button-block control-1">Add stuff 9</button>
     {{/ionContent}}
 </template>
