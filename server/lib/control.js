@@ -40,5 +40,29 @@ Meteor.methods({
     "resetCards" () {
         Cards.remove({});
         populateCards();
+    },
+
+    "increaseTemp" () {
+        let id = Control.findOne()._id;
+        Control.update(id, {$inc: {
+            temperature: 1
+        }});
+    },
+    "decreaseTemp" () {
+        let id = Control.findOne()._id;
+        Control.update(id, {$inc: {
+            temperature: -1
+        }});
+
+    },
+    "addTempCard" () {
+        Cards.insert({
+            type: "info",
+            title: "Het is warm!",
+            message: "Ga naar binnen",
+            status: "new",
+            priority: 5
+        });
     }
+
 })

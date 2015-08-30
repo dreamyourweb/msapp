@@ -33,25 +33,63 @@ $button-font-size: 18px;
     }
     .icon {
         vertical-align: middle;
-        font-size: 3rem;
-        line-height: 65px;
+        font-size: 4rem;
+        line-height: 50px;
+    }
+
+    .col-20 {
+        position: relative;
+    }
+
+    .col {
+        padding: 0;
     }
 
     .valueUnitContainer, .valueContainer {
-        margin-top: (65px - 40px) / 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 20px;
         height: 100%;
+        width: 100%;
+        text-align: center;
         .value, .unit {
             font-weight: bold;
             text-align: center;
         }
         .value {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
     }
 
     .valueContainer {
-        margin-top: (65px - 20px) / 2;
+        margin-top: (65px - 20px) ;
     }
+
+    .lower.valueUnitContainer {
+        margin-top: 30px;
+    }
+
+    .push-a-little{
+        padding-left: 5px;
+    }
+
+    .weather {
+        text-align: center;
+        opacity: 0.7;
+    }
+
+    .weather .icon {
+        font-size: 100px;
+    }
+
+    .temperature {
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-left: 15px;
+        margin-top: -5px;
+    }
+
 }
 
 .chromelinefix {
@@ -59,7 +97,7 @@ $button-font-size: 18px;
 }
 
 .ct-line {
-    stroke-width: 2px;
+    stroke-width: 3px;
 }
 
 .sideMenuSwipeArea {

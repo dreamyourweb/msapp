@@ -16,5 +16,16 @@ Template.control.events({
    },
    "click .control-clear-cards" () {
         Meteor.call("clearCards", () => {});
+   },
+
+   "click .control-increase-temp" () {
+        Meteor.call("increaseTemp", () => {});
+   },
+   "click .control-decrease-temp" () {
+        Meteor.call("decreaseTemp", () => {});
+   },
+    "click .control-add-temp-card" () {
+        Meteor.call("addTempCard", () => {});
    }
+
 });
