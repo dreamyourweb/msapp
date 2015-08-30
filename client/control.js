@@ -48,6 +48,10 @@ Template.control.events({
     "click .control-add-steps-card"() {
         Meteor.call("addStepsCard", () => {
         });
+    },
+    "click .control-add-rest-card"() {
+        Meteor.call("addRestCard", () => {
+        });
     }
 
 });

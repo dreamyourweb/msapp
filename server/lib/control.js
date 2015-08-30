@@ -26,8 +26,8 @@ Meteor.methods({
     "addStressCard" () {
         Cards.insert({
             type: "warning",
-            title: "You are stressed!!",
-            message: "Get your ass in bed!",
+            title: "You are very stressed!",
+            message: "Please get some rest.",
             status: "new",
             priority: 10
         });
@@ -39,7 +39,24 @@ Meteor.methods({
 
     "resetCards" () {
         Cards.remove({});
-        populateCards();
+        Cards.insert({
+            type: "info",
+            title: "Hot weather",
+            message: "This afternoon will be very hot. Plan you activities in the morning.",
+            priority: 5,
+            status: "new"
+        })
+        Cards.insert({
+            type: "question",
+            title: "How well are you feeling?",
+            message: "",
+            priority: 4,
+            status: "new",
+            advice: {
+                title: "That's great!",
+                message: "You have'nt moved a lot today. Take a stroll."
+            }
+        });
     },
 
     "increaseTemp" () {
