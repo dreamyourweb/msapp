@@ -21,5 +21,24 @@ Meteor.methods({
             stressFactor: 0,
             heartFactor: 0
         }});
+    },
+
+    "addStressCard" () {
+        Cards.insert({
+            type: "warning",
+            title: "You are stressed!!",
+            message: "Get your ass in bed!",
+            status: "new",
+            priority: 10
+        });
+    },
+
+    "clearCards" () {
+        Cards.remove({});
+    },
+
+    "resetCards" () {
+        Cards.remove({});
+        populateCards();
     }
 })

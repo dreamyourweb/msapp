@@ -109,8 +109,8 @@ Template.stats.rendered = () => {
         high: 100
     }));
     let heartChart = new Chartist.Line('.heartChart', stats.heart.get(), _.extend(chartOptions, {
-        low: 40,
-        high: 100
+        low: 30,
+        high: 120
     }));
 
     Template.instance().autorun(() => {

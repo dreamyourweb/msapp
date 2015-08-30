@@ -5,7 +5,7 @@ Router.configure({
 Router.route('/', function() {
     this.render('home', {
         data: function() {
-            return {cards: Cards.find()};
+            return {cards: Cards.find({},{sort: {priority: -1}})};
         }
     });
 });
