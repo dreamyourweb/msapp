@@ -147,3 +147,41 @@ $button-font-size: 18px;
 .item h2 {
     font-size: 18px;
 }
+
+// CSS FLIP ANIMATION STYLES BELOW
+
+.flip-container {
+    position: relative;
+	perspective: 1000px;
+    width: 100%;
+}
+
+.flip-container.play .front {
+	transform: rotateY(180deg);
+}
+
+.flip-container.play .back {
+	transform: rotateY(360deg);
+}
+
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.back {
+	transform: rotateY(180deg);
+}

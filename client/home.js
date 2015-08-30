@@ -135,31 +135,56 @@ Template.card.created = () => {
 
 Template.card.rendered = () => {
     let instance = Template.instance();
-    let card = instance.find('.card');
-    let hammertime = new Hammer(card);
+    let container = instance.find('.flip-container');
+    let card = instance.find('.card.front');
+    let back = instance.find('.card.back');
+    let hammertime = new Hammer(container);
+    let width = $(container).innerWidth() - 20;
+    $(container).height($(card).outerHeight() + 16);
+    $(card).width(width);
+    $(back).width(width).height($(card).innerHeight());
     hammertime.on("panleft panright", (ev) => {
-        if (ev.target.className !== 'noswipe')
-            $(card).css({left: ev.deltaX + 'px'});
+        if (ev.target.className !== 'noswipe' && ev.target.className !== 'link')
+            $(container).css({left: ev.deltaX + 'px'});
     });
     hammertime.on("panend", (ev) => {
-        if (ev.target.className !== 'noswipe')
+        if (ev.target.className !== 'noswipe' && ev.target.className !== 'link')
             if (Math.abs(ev.deltaX) > $('body').width() * 0.5) {
-                $(card).stop().animate({left: Math.sign(ev.deltaX) * $('body').width() + 'px'}, {duration: 150, complete: () => {
-                    $(card).animate({height: "0px", padding: "0px", margin: "0px"}, {duration: 300, complete: () => {
+                $(container).stop().animate({left: Math.sign(ev.deltaX) * $('body').width() + 'px'}, {duration: 150, complete: () => {
+                    $(container).animate({height: "0px", padding: "0px", margin: "0px"}, {duration: 300, complete: () => {
                         Cards.remove(instance.data._id);
                     }});
                 }});
             } else
-                $(card).stop().animate({left: '0px'}, 200);
-    });
-    hammertime.on(".link tap", (ev) => {
-        $(card).stop().animate({left: $('body').width() + 'px'}, {duration: 150, complete: () => {
-            $(card).animate({height: "0px", padding: "0px", margin: "0px"}, {duration: 300, complete: () => {
-                Cards.remove(instance.data._id);
-            }});
-        }});
+                $(container).stop().animate({left: '0px'}, 200);
     });
 };
+
+Template['slider-action'].events({
+    //'click input': (ev) => {
+    //    let instance = Template.instance().find('div.item');
+    //    let card = $(instance).closest('.card');
+    //},
+    'click a.item': (ev) => {
+        let instance = Template.instance().find('div.item');
+        let container = $(instance).closest('.flip-container');
+        container.addClass('play');
+        /*let card = $(instance).closest('.card');
+        let fullwidth = $(card).outerWidth();
+        let fullheight = $(card).outerHeight();
+        $(card).after('<div class="flip-container"></div>');
+        let container = $(card).next('.flip-container');
+        let html = $(card).remove();
+        container.css({height: (fullheight + 20) + 'px'}).append(html.addClass('front').addClass('flipper').css({width: fullwidth + 'px'})).append('<div class="list card back flipper" style="height:' + fullheight + 'px;width:' + fullwidth + 'px;">' +
+            '<div class="item item-icon-left">' +
+                '<i class="icon ion-information-circled positive"></i>' +
+                '<h2>Advies: Eet een koekje</h2>' +
+                '<p>Dat helpt altijd.</p>' +
+            '</div>' +
+        '</div>');
+        Meteor.setTimeout(() => {container.addClass('play')}, 200);*/
+    }
+});
 
 Template.card.helpers({
     icon() {
