@@ -47,7 +47,7 @@
 
 <template name="cards">
     {{#ionList class="my-class"}}
-        {{#momentum plugin='slide-height'}}
+        {{#momentum plugin='left-to-right'}}
             {{#each cards}}
                 {{>card}}
             {{/each}}
@@ -56,13 +56,22 @@
 </template>
 
 <template name="card">
-    <div class="list card">
-        <div class="item item-icon-left">
-            <i class="icon {{icon}} {{color}}"></i>
-            <h2>{{title}}</h2>
-            <p>{{message}}</p>
+    <div class="flip-container">
+        <div class="list card front flipper">
+            <div class="item item-icon-left">
+                <i class="icon {{icon}} {{color}}"></i>
+                <h2>{{title}}</h2>
+                <p>{{message}}</p>
+            </div>
+            {{> Template.dynamic template=action}}
         </div>
-        {{> Template.dynamic template=action}}
+        <div class="list card back flipper">
+            <div class="item item-icon-left">
+                <i class="icon ion-information-circled positive"></i>
+                <h2>Advice: eat a cookie</h2>
+                <p>It's always the best thing to do.</p>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -76,13 +85,9 @@
         <i class="icon ion-android-add"></i>
     </div>
     <div class="chromelinefix">
-        {{#momentum plugin='slide-height'}}
-            {{#if show}}
-                <a class="link item item-icon-left {{color}}" href="#">
-                    <i class="icon ion-ios-checkmark-outline"></i>
-                    Geef advies
-                </a>
-            {{/if}}
-        {{/momentum}}
+        <a class="item item-icon-left {{color}}" href="#">
+            <i class="icon ion-ios-checkmark-outline"></i>
+            Give me advice
+        </a>
     </div>
 </template>
