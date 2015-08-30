@@ -41,7 +41,7 @@ if (Cards.find().count() === 0 && Meteor.isServer) {
                 status: "new"
             });
         }
-        let info = infos[Math.floor(Math.random() * info.length)];
+        let info = infos[Math.floor(Math.random() * infos.length)];
         Cards.insert({
             type: "info",
             title: info.title,
