@@ -58,8 +58,8 @@ Meteor.methods({
     "addTempCard" () {
         Cards.insert({
             type: "info",
-            title: "Het is warm!",
-            message: "Ga naar binnen",
+            title: "It's " + Control.findOne().temperature + "°C outside.",
+            message: "Keep indoors",
             status: "new",
             priority: 5
         });
