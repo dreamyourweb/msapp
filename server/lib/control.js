@@ -63,6 +63,29 @@ Meteor.methods({
             status: "new",
             priority: 5
         });
+    },
+
+    "increaseSteps" () {
+        let id = Control.findOne()._id;
+        Control.update(id, {$inc: {
+            steps: 10
+        }});
+    },
+    "decreaseSteps" () {
+        let id = Control.findOne()._id;
+        Control.update(id, {$inc: {
+            steps: -10
+        }});
+
+    },
+    "addStepsCard" () {
+        Cards.insert({
+            type: "info",
+            title: "Je hebt niet zo veel gelopen.",
+            message: "Loop meer",
+            status: "new",
+            priority: 5
+        });
     }
 
 })
