@@ -3,12 +3,17 @@ $loading-font-size: 22px;
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/_ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/_ionicons';
 
-body{
+.content {
   background: $stable;
 }
 
+#statsContainer{
+    background: url(http://lorempixel.com/1080/720/nature/);
+    background-size: 100% auto;
+}
 #stats {
-    background: $calm;
+    // background: $calm;
+    background: rgba($calm, 0.5);
     .icon {
         // font-size: 400%;
         &.ion-heart{ color: $assertive; }
@@ -54,4 +59,8 @@ body{
     height: 100%;
     background: none;
     z-index: 100000;
+}
+
+.bar .title {
+    text-align: center !important;
 }

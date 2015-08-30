@@ -86,8 +86,14 @@ Template.stats.rendered = () => {
         }
     };
 
-    let stressChart = new Chartist.Line('.stressChart', stats.stress.get(), chartOptions);
-    let heartChart = new Chartist.Line('.heartChart', stats.heart.get(), chartOptions);
+    let stressChart = new Chartist.Line('.stressChart', stats.stress.get(), _.extend(chartOptions, {
+        low: 0,
+        high: 100
+    }));
+    let heartChart = new Chartist.Line('.heartChart', stats.heart.get(), _.extend(chartOptions, {
+        low: 40,
+        high: 100
+    }));
 
     Template.instance().autorun(() => {
         stressChart.update(stats.stress.get());
