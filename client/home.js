@@ -143,8 +143,8 @@ Template.card.rendered = () => {
     });
     hammertime.on("panend", (ev) => {
         if (ev.target.className !== 'noswipe')
-            if (ev.deltaX > $('body').width() * 0.5) {
-                $(card).stop().animate({left: $('body').width() + 'px'}, {duration: 150, complete: () => {
+            if (Math.abs(ev.deltaX) > $('body').width() * 0.5) {
+                $(card).stop().animate({left: Math.sign(ev.deltaX) * $('body').width() + 'px'}, {duration: 150, complete: () => {
                     $(card).animate({height: "0px", padding: "0px", margin: "0px"}, {duration: 300, complete: () => {
                         Cards.remove(instance.data._id);
                     }});
