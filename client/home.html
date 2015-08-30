@@ -20,25 +20,41 @@
 
 <template name="stats">
     <div id="statsContainer">
-        <div id="stats" class="padding">
+        <div id="stats" class="">
             <div class="row">
-                <div class="col-10"><i class="icon ion-heart"></i></div>
-                <div class="col col-65"><div class="chart heartChart"></div></div>
-                <div class="col col-25">
-                    <div class="valueUnitContainer">
-                        <div class="value">{{heart}}</div>
-                        <div class="unit">BPM</div>
+                <div class="col col-70">
+                    <div class="row">
+                        <div class="col col-20">
+                            <i class="icon ion-heart"></i>
+                            <div class="valueUnitContainer">
+                                <div class="value">{{heart}}</div>
+                                <!-- <div class="unit">BPM</div> -->
+                            </div>
+                        </div>
+                        <div class="col col-65"><div class="chart heartChart"></div></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-20 push-a-little">
+                            <i class="icon ion-fireball"></i>
+                            <div class="valueUnitContainer lower">
+                                <div class="value">{{stress}}</div>
+                                <!-- <div class="unit">STRESS</div> -->
+                            </div>
+                        </div>
+                        <div class="col col-65"><div class="chart stressChart"></div></div>
                     </div>
                 </div>
+                <div class="col col-25 weather">
+                    {{> ionIcon icon="ios-partlysunny"}}
+                    <span class="temperature">{{control.temperature}}°</span>
+                </div>
             </div>
-            <div class="row">
-                <div class=" col-10"><i class="icon ion-fireball"></i></div>
-                <div class="col col-65"><div class="chart stressChart"></div></div>
-                <div class="col col-25">
-                    <div class="valueUnitContainer">
-                        <div class="value">{{stress}}%</div>
-                        <div class="unit">STRESS</div>
-                    </div>
+            <div class="row steps">
+                <div class="col">
+                    {{> ionIcon icon="android-walk"}}
+                    <span class="steps-text">
+                        {{control.steps}} <small>STEPS</small>
+                    </span>
                 </div>
             </div>
         </div>

@@ -1,5 +1,15 @@
 $loading-font-size: 22px;
 
+// $calm: #99d49f;
+$balanced: #64bd6d;
+$font-family-base: "Proxima Nova", "Helvetica Neue", "Roboto", sans-serif;
+$font-size-base: 16px;
+$font-size-large: 20px;
+$font-size-small: 14px;
+$item-font-size:  18px;
+$item-icon-accessory-font-size: 18px;
+$button-font-size: 18px;
+
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/_ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/_ionicons';
 
@@ -13,7 +23,7 @@ $loading-font-size: 22px;
 }
 #stats {
     // background: $calm;
-    background: rgba($calm, 0.5);
+    background: rgba($calm, 0.8);
     .icon {
         // font-size: 400%;
         &.ion-heart{ color: $assertive; }
@@ -23,25 +33,81 @@ $loading-font-size: 22px;
     }
     .icon {
         vertical-align: middle;
-        font-size: 3rem;
-        line-height: 65px;
+        font-size: 4rem;
+        line-height: 50px;
+    }
+
+    .col-20 {
+        position: relative;
+    }
+
+    .col {
+        padding: 0;
     }
 
     .valueUnitContainer, .valueContainer {
-        margin-top: (65px - 40px) / 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 20px;
         height: 100%;
+        width: 100%;
+        text-align: center;
         .value, .unit {
             font-weight: bold;
             text-align: center;
         }
         .value {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
     }
 
     .valueContainer {
-        margin-top: (65px - 20px) / 2;
+        margin-top: (65px - 20px) ;
     }
+
+    .lower.valueUnitContainer {
+        margin-top: 30px;
+    }
+
+    .push-a-little{
+        padding-left: 5px;
+    }
+
+    .weather {
+        text-align: center;
+        opacity: 0.7;
+    }
+
+    .weather .icon {
+        font-size: 100px;
+    }
+
+    .temperature {
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-left: 15px;
+        margin-top: -5px;
+    }
+
+    .steps {
+        padding-left: 25px;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-weight: bold;
+        .icon {
+            font-size: 2.5rem;
+            margin-right: 10px;
+        }
+        .steps-text {
+            position: relative;
+            top: 5px;
+        }
+        small {
+            font-size: 1.2rem;
+        }
+    }
+
 }
 
 .chromelinefix {
@@ -49,7 +115,7 @@ $loading-font-size: 22px;
 }
 
 .ct-line {
-    stroke-width: 2px;
+    stroke-width: 3px;
 }
 
 .sideMenuSwipeArea {
@@ -63,6 +129,23 @@ $loading-font-size: 22px;
 
 .bar .title {
     text-align: center !important;
+}
+
+.bar.bar-balanced {
+    .title, .button  {
+        color: #3c7141;
+        // color: black;
+        // opacity: 0.3;
+    }
+}
+.item-avatar.item-balanced {
+    p, h2 {
+        color: #3c7141;
+    }
+}
+
+.item h2 {
+    font-size: 18px;
 }
 
 // CSS FLIP ANIMATION STYLES BELOW

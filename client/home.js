@@ -140,9 +140,7 @@ Template.card.rendered = () => {
     let back = instance.find('.card.back');
     let hammertime = new Hammer(container);
     let width = $(container).innerWidth() - 20;
-    console.log($(container).height());
     $(container).height($(card).outerHeight() + 16);
-    console.log($(container).height());
     $(card).width(width);
     $(back).width(width).height($(card).innerHeight());
     hammertime.on("panleft panright", (ev) => {

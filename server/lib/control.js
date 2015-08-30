@@ -40,5 +40,52 @@ Meteor.methods({
     "resetCards" () {
         Cards.remove({});
         populateCards();
+    },
+
+    "increaseTemp" () {
+        let id = Control.findOne()._id;
+        Control.update(id, {$inc: {
+            temperature: 1
+        }});
+    },
+    "decreaseTemp" () {
+        let id = Control.findOne()._id;
+        Control.update(id, {$inc: {
+            temperature: -1
+        }});
+
+    },
+    "addTempCard" () {
+        Cards.insert({
+            type: "info",
+            title: "Het is warm!",
+            message: "Ga naar binnen",
+            status: "new",
+            priority: 5
+        });
+    },
+
+    "increaseSteps" () {
+        let id = Control.findOne()._id;
+        Control.update(id, {$inc: {
+            steps: 10
+        }});
+    },
+    "decreaseSteps" () {
+        let id = Control.findOne()._id;
+        Control.update(id, {$inc: {
+            steps: -10
+        }});
+
+    },
+    "addStepsCard" () {
+        Cards.insert({
+            type: "info",
+            title: "Je hebt niet zo veel gelopen.",
+            message: "Loop meer",
+            status: "new",
+            priority: 5
+        });
     }
+
 })
