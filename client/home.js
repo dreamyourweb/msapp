@@ -1,3 +1,21 @@
+let heartFactor = 0;
+let stressFactor = 0;
+
+let handleControl = (doc) => {
+    heartFactor = doc.heartFactor;
+    stressFactor = doc.stressFactor;
+};
+
+Control.find().observe({
+    added(doc) {
+        handleControl(doc);
+    },
+
+    changed(newDoc, oldDoc) {
+        handleControl(newDoc);
+    }
+});
+
 let generateDummyData = (n, init, a) => {
     output = [init];
     labels = [-n + 1];
@@ -21,12 +39,12 @@ let stats = {
 Meteor.setInterval(() => {
     let h = stats.heart.get();
     h.series[0].splice(0, 1);
-    h.series[0].push(h.series[0][98] + (Math.random()-0.5) * 2 * 2);
+    h.series[0].push(h.series[0][98] + (Math.random()-0.5 + heartFactor) * 2 * 2 );
     stats.heart.set(h);
 
     let s = stats.stress.get();
     s.series[0].splice(0, 1);
-    s.series[0].push(s.series[0][98] + (Math.random()-0.5) * 2 * 2);
+    s.series[0].push(s.series[0][98] + (Math.random()-0.5 + stressFactor) * 2 * 2 );
     stats.stress.set(s);
 }, 1000);
 
